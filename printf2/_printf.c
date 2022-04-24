@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				j++;
 				_putchar(format[i + 1]);
+				j++;
 			}
 			i++;
 		}

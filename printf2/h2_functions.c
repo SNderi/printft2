@@ -49,25 +49,6 @@ int print_d(int n)
 }
 
 /**
- * counter - Counts number of 1 & 0.
- * @i: integer to count
- *
- *Return: Count of binaries.
- */
-
-int counter(int n)
-{
-	int c = 0;
-	
-	while (n != 0)
-	{
-		n = n / 2;
-		c++;
-	}
-	return (c);
-}
-
-/**
  * print_b - Converts and prints integer into binary
  * @n: Integer to convert
  *
@@ -76,23 +57,22 @@ int counter(int n)
 
 int print_b(int n)
 {
-	int len = counter(n);
-	int array[len];
-	int i = 0;
+	int array[10];
+	int i = 0, j = 0;
 	int rem;
-	int *p = &len;
 
 	while (n != 0)
 	{
 		rem = n % 2;
 		n = n / 2;
-		array[*p] = rem;
+		array[i] = rem;
 		i++;
+		j++;
 	}
 	while (i >= 0)
 	{
-		_putchar('0' + array[i]);
+		_putchar('0' + array[i - 1]);
 		i--;
 	}
-	return (len);
+	return (j);
 }
